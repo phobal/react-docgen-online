@@ -6,11 +6,25 @@
   "main": "./index.js",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --port 8090 --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --colors --config webpack.prod.config.js",
     "docs": "babel-node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",
   "dependencies": {
+    "codemirror": "^5.33.0",
+    "doctrine": "^2.0.2",
+    "highlight.js": "^9.12.0",
+    "marked": "^0.3.9",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-codemirror2": "^3.0.7",
+    "react-docgen": "^2.20.0",
+    "react-dom": "^16.2.0",
+    "recast": "^0.13.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel": "^6.23.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -20,22 +34,14 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "doctrine": "^2.0.2",
-    "express": "^4.15.4",
-    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.30.1",
-    "marked": "^0.3.9",
     "open-browser-webpack-plugin": "^0.0.5",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-docgen": "^2.20.0",
-    "react-dom": "^16.2.0",
-    "recast": "^0.13.0",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "css-loader": "^0.28.8"
   }
 }

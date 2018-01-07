@@ -1,18 +1,14 @@
 // document.write('hello e2s');
 import React from 'react';
 import ReactDom from 'react-dom';
+import CodePanel from './src/components/CodePanel';
 
-import MarkdownElement from './src/markdownElement';
+require('codemirror/lib/codemirror.css');
 
 const docgen = require('./src/docgen');
-const str = require('./Loading');
-// require('./src/markdown.css');
-
-const markdown = docgen(str);
-console.log(markdown);
 
 ReactDom.render(
-  <MarkdownElement text={markdown} />,
+  <CodePanel />,
   document.querySelector('#root'),
 );
 

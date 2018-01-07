@@ -1,4 +1,4 @@
-module.exports = `
+  module.exports = `
   import React, { PureComponent } from 'react';
   import Spinner from 'react-spinkit';
   import PropTypes from 'prop-types';
@@ -79,5 +79,5 @@ module.exports = `
      * programmatically set the color of the spinners; this can either be a hex value or a color word.
      */
     color: PropTypes.string
-};`;
+  };`
 

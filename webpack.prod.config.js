@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrower = require('open-browser-webpack-plugin');
@@ -6,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: path.resolve(__dirname, 'app.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'app.min.js',
   },
   resolve: {
@@ -61,10 +62,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
-    new OpenBrower({
-      url: 'http://0.0.0.0:8090',
-    }),
     new ExtractTextPlugin('[name]/styles.[contenthash].css'),
+    new webpack.optimize.UglifyJsPlugin({
+			output: {
+				comments: false
+			},
+			compress: {
+				warnings: false
+			}
+		}),
   ],
-  devtool: '#inline-source-map',
 };
